@@ -1,0 +1,20 @@
+{
+    "title": "Elementary",
+    "name": "elementary-theme",
+    "description": "...",
+    "version": "1.0.0",
+    "author": "Ja <ovirendo@gmail.com> (http://localhost/)",
+    "homepage": "http://localhost",
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "license": "MIT",
+    "engines": {
+        "brackets": ">=0.42.0"
+    },
+    "theme": {
+        "file": "theme.css",
+        "dark": true
+    }
+}
