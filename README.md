@@ -1,0 +1,2 @@
+brackets-elementary-theme
+=========================
