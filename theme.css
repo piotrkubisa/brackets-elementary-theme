@@ -28,8 +28,11 @@
     color: #66D9EF;
 }
 
+.cm-variable {
+    color: darken(#F8F8F2, 15%);
+}
+
 .cm-string.cm-property,
-.cm-variable,
 .cm-variable-2 {
     color: #F8F8F2;
 }
