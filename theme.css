@@ -224,9 +224,13 @@ div.CodeMirror-selected {
             background: rgb(89, 91, 91);
             border-color: #333434;
             border-width: 1px;
-            color: #B9BBBB;
+            color: #BBBBBB;
             
-        }
+            &.modified,
+            &.changed {
+                box-shadow: 0 1px 1px #737373 inset,
+                            inset 0 3px 0px rgba(0, 184, 255, .5);
+            }
     }
 }
 
