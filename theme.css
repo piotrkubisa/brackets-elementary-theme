@@ -69,6 +69,7 @@
 .CodeMirror .CodeMirror-scroll {
     background: @monokai-bg;
     color: #F8F8F2;
+    z-index: 100;
 }
 
 .CodeMirror-lines {
@@ -195,43 +196,55 @@ div.CodeMirror-selected {
 /***************/
 
 /* tabs (extension: documents-toolbar) */
+@elementary_tabs_bg: #272822; /* monokaibg or #2D2E30 of google-chrome darkish dark :P */
+@elementary_tabs_border: #2A2C2D;
+
 .ext-documents {
-    background: #3c3f41;
-    
-    .document:before {
-        border-width: 0;
-    }
-        
-    .documents-holder {
-    
-        .document {
-            background: #333;            
-            font-weight: bold;
-            color: lighten(#6B6D6E, 20%);
-            border-radius: 4px 4px 0 0;
-        }
-        
-        .document:not(.selected) {
-            cursor: pointer;
-        }
-        
-        .document:before {
-            border-width: 0;
-        }
-        
-        .document.selected {
-            box-shadow: 0 1px 1px #737373 inset;
-            background: rgb(89, 91, 91);
-            border-color: #333434;
-            border-width: 1px;
-            color: #BBBBBB;
-            
-            &.modified,
-            &.changed {
-                box-shadow: 0 1px 1px #737373 inset,
-                            inset 0 3px 0px rgba(0, 184, 255, .5);
-            }
-        }
-    }
+    @elementary_nav_bg: #3C3F41;
+    background-color: #3C3F41;
 }
 
+.ext-documents .document {    
+    margin: 0 12px;
+    overflow-x: initial;    
+    padding:  6px 11px 3px 10px;    
+
+    
+    background: @elementary_tabs_bg;
+    border-top: 1px solid @elementary_tabs_border;
+
+    span:not(.documment-close) {
+        z-index: 10;
+    }
+
+    .documment-close {
+        display: none;
+    }
+
+    &::before {
+        display: block;
+        width: 30px;
+        height: 30px;
+        z-index: 1;
+        top: 5px;
+        background: @elementary_tabs_bg;
+        left: -7px;
+        border-left: 1px solid @elementary_tabs_border;
+        transform: rotate(25deg);
+        position: absolute;
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        top: 5px;
+        left: auto;
+        right: -7px;
+        display: block;
+        width: 30px;
+        height: 30px;
+        z-index: 1;
+        background: @elementary_tabs_bg;
+        border-right: 1px solid @elementary_tabs_border;
+        transform: rotate(-25deg);
+    }
+}
