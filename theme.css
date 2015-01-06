@@ -64,12 +64,14 @@
 @window-background: #3C3F41;
 @monokai-bg: #272822;
 
+.CodeMirror {
+    z-index: 3;
+}
 
 .CodeMirror,
 .CodeMirror .CodeMirror-scroll {
     background: @monokai-bg;
     color: #F8F8F2;
-    z-index: 100;
 }
 
 .CodeMirror-lines {
@@ -196,7 +198,7 @@ div.CodeMirror-selected {
 /***************/
 
 /* tabs (extension: documents-toolbar) */
-@elementary_tabs_bg: #272822; /* monokaibg or #2D2E30 of google-chrome darkish dark :P */
+@elementary_tabs_bg: @monokai-bg; /* monokaibg or #2D2E30 of google-chrome darkish dark :P */
 @elementary_tabs_border: #2A2C2D;
 
 .ext-documents {
@@ -214,7 +216,7 @@ div.CodeMirror-selected {
     border-top: 1px solid @elementary_tabs_border;
 
     span:not(.documment-close) {
-        z-index: 10;
+        z-index: 2;
     }
 
     .documment-close {
